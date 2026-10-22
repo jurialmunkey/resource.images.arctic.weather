@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Thunderstorm animation draft</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#101e29;color:#e8e2d7;font:15px system-ui,sans-serif}main{max-width:920px;margin:auto;padding:26px 22px}h1{font-size:23px;font-weight:550;margin:0 0 7px}p{color:#a9b8c0;margin:0 0 18px;line-height:1.5}.layout{display:flex;align-items:flex-start;gap:30px}.card{position:relative;flex:0 0 320px;aspect-ratio:4/9;overflow:hidden;background:#243d50}.card img{position:absolute;inset:0;width:100%;height:100%}.controls{flex:1;padding-top:10px}button,input{font:inherit;accent-color:#c95032}button{background:#263c4a;border:1px solid #657987;border-radius:5px;color:#f3ebdd;padding:9px 14px;cursor:pointer}label{display:flex;gap:9px;align-items:center;margin:17px 0}input[type=range]{width:100%}.phase{color:#a9b8c0;font-size:13px;margin:14px 0 20px}.note{font-size:13px;line-height:1.6;color:#a9b8c0;border-top:1px solid #354957;padding-top:17px;margin-top:24px}.reduced{font-size:13px;color:#d5b69d}.hidden{visibility:hidden}@media(max-width:580px){main{padding:18px 14px}.layout{flex-direction:column;gap:12px}.card{flex:none;width:min(100%,320px);align-self:center}.controls{width:100%}}
+</style>
+</head>
+<body><main>
+<h1>Thunderstorms · animation draft</h1>
+<p>Fine falling rain, travelling river ripples and occasional lightning.</p>
+<div class="layout">
+<div class="card" role="img" aria-label="Japanese mountain temple during a thunderstorm">
+<img id="base" alt=""><img id="river" alt=""><img id="lightning" alt=""><img id="rain" alt="">
+</div>
+<div class="controls">
+<button id="play" type="button" aria-pressed="true">Pause</button>
+<div class="phase" id="phase">Rain phase 1 / 5</div>
+<label for="scrub">Inspect phase</label>
+<input id="scrub" type="range" min="0" max="4" step="1" value="0" aria-label="Animation phase">
+<label><input id="toggleRain" type="checkbox" checked> Falling rain</label>
+<label><input id="toggleRiver" type="checkbox" checked> River ripples</label>
+<label><input id="toggleLightning" type="checkbox" checked> Lightning</label>
+<div class="note">One static background. Five PNG phases for rain and five for river ripples. One separate lightning PNG. Everything is composited live from single-frame images.<br><br>Mountains, trees, temple and riverbanks stay still. Rain cycles in 0.9 seconds; river ripples in 1.5 seconds. Lightning flashes briefly every 5 seconds.</div>
+<p id="reduced" class="reduced"></p>
+</div></div>
+</main>
+<script>
+const assets=__ASSETS__;
+const el=id=>document.getElementById(id);
+let ready=false,playing=!matchMedia('(prefers-reduced-motion: reduce)').matches,phase=0,time=0,last=performance.now();
+const loaded={};
+async function preload(){
+  for(const [key,value] of Object.entries(assets)){
+    loaded[key]=await Promise.all((Array.isArray(value)?value:[value]).map(src=>new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>resolve(im);im.onerror=reject;im.src=src;})));
+  }
+  el('base').src=loaded.base[0].src;el('lightning').src=loaded.lightning[0].src;ready=true;render();
+}
+function render(manual=false){
+  if(!ready)return;
+  const river=manual?phase:Math.floor(time/300)%5;
+  el('rain').src=loaded.rain[phase].src;el('river').src=loaded.river[river].src;
+  const t=time%5000;
+  const pulse=(attack,decay,peak)=>t<attack?0:t<attack+30?peak*(t-attack)/30:t<decay?peak:Math.max(0,peak*(1-(t-decay)/220));
+  el('lightning').style.opacity=manual?[0,.8,.26,.56,0][phase]:Math.max(pulse(1200,1250,.8),pulse(1480,1530,.56));
+  el('phase').textContent=`Rain phase ${phase+1} / 5 · river ${river+1} / 5`;
+  el('scrub').value=phase;
+}
+function setPlaying(value){playing=value;el('play').textContent=playing?'Pause':'Play';el('play').setAttribute('aria-pressed',String(playing));}
+el('play').onclick=()=>setPlaying(!playing);
+el('scrub').oninput=e=>{setPlaying(false);phase=Number(e.target.value);render(true);};
+for(const [toggle,layer] of [['toggleRain','rain'],['toggleRiver','river'],['toggleLightning','lightning']])el(toggle).onchange=e=>el(layer).classList.toggle('hidden',!e.target.checked);
+if(!playing)el('reduced').textContent='Paused to respect your reduced-motion setting. Press Play to review.';
+setPlaying(playing);
+function tick(now){const elapsed=Math.min(now-last,100);last=now;if(playing&&ready&&!document.hidden){time+=elapsed;phase=Math.floor(time/180)%5;render();}requestAnimationFrame(tick);}
+preload().catch(()=>el('phase').textContent='Could not load the preview layers.');requestAnimationFrame(tick);
+</script></body></html>

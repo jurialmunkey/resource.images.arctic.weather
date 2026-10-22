@@ -1,0 +1,374 @@
+{
+  "cards": 49,
+  "singleFrameImages": 833,
+  "scope": "animated and landscape cards",
+  "runtimeBytes": 12525243,
+  "dependencyVersion": "1.0.3",
+  "motionMetrics": [
+    {
+      "code": "0",
+      "effect": "atmosphere",
+      "pixelsChangingOver10": 95843
+    },
+    {
+      "code": "1",
+      "effect": "surface",
+      "pixelsChangingOver10": 1776
+    },
+    {
+      "code": "1",
+      "effect": "weather",
+      "pixelsChangingOver10": 17992
+    },
+    {
+      "code": "2",
+      "effect": "atmosphere",
+      "pixelsChangingOver10": 104944
+    },
+    {
+      "code": "2",
+      "effect": "surface",
+      "pixelsChangingOver10": 4275
+    },
+    {
+      "code": "2",
+      "effect": "weather",
+      "pixelsChangingOver10": 17646
+    },
+    {
+      "code": "3",
+      "effect": "surface",
+      "pixelsChangingOver10": 400
+    },
+    {
+      "code": "3",
+      "effect": "weather",
+      "pixelsChangingOver10": 7032
+    },
+    {
+      "code": "4",
+      "effect": "surface",
+      "pixelsChangingOver10": 415
+    },
+    {
+      "code": "4",
+      "effect": "weather",
+      "pixelsChangingOver10": 12123
+    },
+    {
+      "code": "5",
+      "effect": "surface",
+      "pixelsChangingOver10": 3679
+    },
+    {
+      "code": "5",
+      "effect": "weather",
+      "pixelsChangingOver10": 8322
+    },
+    {
+      "code": "6",
+      "effect": "surface",
+      "pixelsChangingOver10": 4748
+    },
+    {
+      "code": "6",
+      "effect": "weather",
+      "pixelsChangingOver10": 7331
+    },
+    {
+      "code": "7",
+      "effect": "weather",
+      "pixelsChangingOver10": 4280
+    },
+    {
+      "code": "8",
+      "effect": "surface",
+      "pixelsChangingOver10": 102
+    },
+    {
+      "code": "8",
+      "effect": "weather",
+      "pixelsChangingOver10": 2413
+    },
+    {
+      "code": "9",
+      "effect": "surface",
+      "pixelsChangingOver10": 543
+    },
+    {
+      "code": "9",
+      "effect": "weather",
+      "pixelsChangingOver10": 2248
+    },
+    {
+      "code": "10",
+      "effect": "surface",
+      "pixelsChangingOver10": 10971
+    },
+    {
+      "code": "10",
+      "effect": "weather",
+      "pixelsChangingOver10": 6734
+    },
+    {
+      "code": "11",
+      "effect": "surface",
+      "pixelsChangingOver10": 397
+    },
+    {
+      "code": "11",
+      "effect": "weather",
+      "pixelsChangingOver10": 8787
+    },
+    {
+      "code": "12",
+      "effect": "surface",
+      "pixelsChangingOver10": 549
+    },
+    {
+      "code": "12",
+      "effect": "weather",
+      "pixelsChangingOver10": 10007
+    },
+    {
+      "code": "13",
+      "effect": "weather",
+      "pixelsChangingOver10": 1423
+    },
+    {
+      "code": "14",
+      "effect": "surface",
+      "pixelsChangingOver10": 10295
+    },
+    {
+      "code": "14",
+      "effect": "weather",
+      "pixelsChangingOver10": 1386
+    },
+    {
+      "code": "15",
+      "effect": "weather",
+      "pixelsChangingOver10": 4703
+    },
+    {
+      "code": "16",
+      "effect": "weather",
+      "pixelsChangingOver10": 3105
+    },
+    {
+      "code": "17",
+      "effect": "surface",
+      "pixelsChangingOver10": 549
+    },
+    {
+      "code": "17",
+      "effect": "weather",
+      "pixelsChangingOver10": 7254
+    },
+    {
+      "code": "18",
+      "effect": "surface",
+      "pixelsChangingOver10": 347
+    },
+    {
+      "code": "18",
+      "effect": "weather",
+      "pixelsChangingOver10": 3393
+    },
+    {
+      "code": "20",
+      "effect": "atmosphere",
+      "pixelsChangingOver10": 21081
+    },
+    {
+      "code": "21",
+      "effect": "surface",
+      "pixelsChangingOver10": 10252
+    },
+    {
+      "code": "24",
+      "effect": "surface",
+      "pixelsChangingOver10": 2671
+    },
+    {
+      "code": "26",
+      "effect": "surface",
+      "pixelsChangingOver10": 11893
+    },
+    {
+      "code": "27",
+      "effect": "atmosphere",
+      "pixelsChangingOver10": 12
+    },
+    {
+      "code": "28",
+      "effect": "surface",
+      "pixelsChangingOver10": 8267
+    },
+    {
+      "code": "29",
+      "effect": "atmosphere",
+      "pixelsChangingOver10": 157
+    },
+    {
+      "code": "29",
+      "effect": "surface",
+      "pixelsChangingOver10": 9124
+    },
+    {
+      "code": "30",
+      "effect": "surface",
+      "pixelsChangingOver10": 8660
+    },
+    {
+      "code": "31",
+      "effect": "atmosphere",
+      "pixelsChangingOver10": 229
+    },
+    {
+      "code": "31",
+      "effect": "surface",
+      "pixelsChangingOver10": 2663
+    },
+    {
+      "code": "32",
+      "effect": "surface",
+      "pixelsChangingOver10": 13053
+    },
+    {
+      "code": "33",
+      "effect": "atmosphere",
+      "pixelsChangingOver10": 148
+    },
+    {
+      "code": "34",
+      "effect": "surface",
+      "pixelsChangingOver10": 11198
+    },
+    {
+      "code": "35",
+      "effect": "surface",
+      "pixelsChangingOver10": 600
+    },
+    {
+      "code": "35",
+      "effect": "weather",
+      "pixelsChangingOver10": 15747
+    },
+    {
+      "code": "36",
+      "effect": "surface",
+      "pixelsChangingOver10": 9361
+    },
+    {
+      "code": "37",
+      "effect": "surface",
+      "pixelsChangingOver10": 8777
+    },
+    {
+      "code": "37",
+      "effect": "weather",
+      "pixelsChangingOver10": 651
+    },
+    {
+      "code": "38",
+      "effect": "surface",
+      "pixelsChangingOver10": 2935
+    },
+    {
+      "code": "38",
+      "effect": "weather",
+      "pixelsChangingOver10": 1069
+    },
+    {
+      "code": "39",
+      "effect": "surface",
+      "pixelsChangingOver10": 9570
+    },
+    {
+      "code": "39",
+      "effect": "weather",
+      "pixelsChangingOver10": 1673
+    },
+    {
+      "code": "40",
+      "effect": "weather",
+      "pixelsChangingOver10": 721
+    },
+    {
+      "code": "41",
+      "effect": "weather",
+      "pixelsChangingOver10": 5964
+    },
+    {
+      "code": "42",
+      "effect": "weather",
+      "pixelsChangingOver10": 848
+    },
+    {
+      "code": "43",
+      "effect": "surface",
+      "pixelsChangingOver10": 1092
+    },
+    {
+      "code": "43",
+      "effect": "weather",
+      "pixelsChangingOver10": 6497
+    },
+    {
+      "code": "44",
+      "effect": "surface",
+      "pixelsChangingOver10": 1492
+    },
+    {
+      "code": "45",
+      "effect": "surface",
+      "pixelsChangingOver10": 515
+    },
+    {
+      "code": "45",
+      "effect": "weather",
+      "pixelsChangingOver10": 12661
+    },
+    {
+      "code": "46",
+      "effect": "surface",
+      "pixelsChangingOver10": 534
+    },
+    {
+      "code": "46",
+      "effect": "weather",
+      "pixelsChangingOver10": 2888
+    },
+    {
+      "code": "47",
+      "effect": "surface",
+      "pixelsChangingOver10": 13532
+    },
+    {
+      "code": "47",
+      "effect": "weather",
+      "pixelsChangingOver10": 274
+    },
+    {
+      "code": "na",
+      "effect": "surface",
+      "pixelsChangingOver10": 12701
+    }
+  ],
+  "checks": [
+    "complete distinct coverage",
+    "PNG alpha and single-frame format",
+    "five distinct active phases",
+    "static clouds and foliage",
+    "localized looping vortices and static tornado ground",
+    "localized staggered star twinkles",
+    "visible water motion",
+    "periodic precipitation",
+    "matching dependency version",
+    "shared include expansion and resolved layer paths",
+    "static landscape dialog, 1280 x 720 coverage and fallback",
+    "XML parsing"
+  ],
+  "limitation": "Kodi playback was not visually inspected in a running skin."
+}

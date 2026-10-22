@@ -1,0 +1,23 @@
+{
+  "method": "built-in imagegen; one clean plate and one detached cloud source per condition, then deterministic compositing",
+  "plates": [
+    {
+      "code": "0",
+      "prompt": "Use case: precise-object-edit. Edit target: the supplied Japanese woodblock tornado weather card. Produce ONE clean background plate for layered animation. Remove the entire tornado funnel AND all its large curled rotating cloud crown, and remove the dark cloud masses across the upper sky. Fill their former space with an empty, subdued storm-sky gradient, muted dusty blue-grey at the top transitioning to the original pale ivory-grey sky near the horizon. No recognizable cloud shapes or swirl may remain in this background plate. Preserve EXACTLY the original composition, crop, woodblock print grain, foreground trees, torii, grasses, painted airborne leaves, mountain ridge, houses, fields and water. Do not move, repaint or change any landscape or foreground object. Keep the ominous weather palette; no sun, stars, new objects, text or borders. Full 4:9 portrait canvas matching the input; this is only a static clean plate, cloud artwork will be put back on a separate animated layer."
+    },
+    {
+      "code": "2",
+      "prompt": "Use case: precise-object-edit. Edit target: the supplied Japanese woodblock hurricane weather card. Produce ONE clean background plate for layered animation. Remove the ENTIRE swirling hurricane cloud pattern and all cloud masses from the upper sky, including the bright spiral and dark eye. Replace only that sky with a plain subdued slate-blue storm-sky gradient in the same palette and print grain, without any cloud shapes. Keep EXACTLY the same sea waves, islands, distant coast, foreground black pine silhouette, shrine gate, stair path, fishing village, horizon placement, crop and lighting. Do not change or repaint any landscape or foreground pixel. Do not add rain or any sun, objects, text or borders. Full 4:9 portrait canvas matching the input. This is a static clean sky/landscape plate; the original cloud artwork will be animated as a separate layer."
+    }
+  ],
+  "clouds": [
+    {
+      "code": "0",
+      "prompt": "Use case: background-extraction. Edit target: the supplied Japanese woodblock tornado card. Make ONE transparent cloud-layer cutout for animation. Keep ONLY the entire tornado funnel together with its broad swirling cloud crown and the storm clouds across the top. Preserve the exact original painted cloud pattern, dark blue/grey/ivory palette, paper print grain, original cloud shapes and funnel silhouette, original scale and original positions on the full tall 4:9 canvas. Remove the sky between/outside the cloud shapes and all landscape, trees, airborne leaves, grass, red gate, mountains, houses, water and ground; those regions must be genuinely transparent. Keep pale painted cloud ribbons that are part of the swirling mass, but no sky background rectangle. The narrow funnel must end at its original point above the horizon. Do not recenter, enlarge, crop or redraw the tornado into a different shape. The cloud crown must remain much wider than the funnel, just like the source. There must be no scenery and no floating leaves in the cutout. No text, labels or borders. ONE single-frame RGBA image on genuinely transparent background. This cutout will be rotated/reprojected over a separate static sky plate, not used as a full card."
+    },
+    {
+      "code": "2",
+      "prompt": "Use case: background-extraction. Supporting compositing reference: the supplied approved Japanese woodblock hurricane weather card. Create ONE separate transparent CLOUD LAYER for animating that scene. Extract and extend the original hurricane spiral into a COMPLETE circular cyclone, centered in a square canvas. It must be the same flat Japanese woodblock painting: dark indigo eye, broad winding slate-blue and pale ivory printed cloud ribbons, rough hand-printed edges and paper grain. The complete outer cloud disc must fit with a modest transparent margin on all four sides, so it can rotate; the dark eye is exactly at the canvas centre. Use FIVE evenly spaced broad spiral cloud arms around the eye, approximately fivefold rotational symmetry, with natural painted internal texture. Preserve the original cloudy, dense storm appearance; no thin line swirls, no graphic wind strokes, no cartoon pinwheel, no added highlight overlay. This is the entire painted cloud mass itself. Outside the irregular cloud edge the background must be genuinely transparent. No sky rectangle, scenery, sea, rain, trees, architecture, text, labels or borders. Square 1:1, isolated cloud disc only. One single static image; animation will be done by rotating/reprojecting this exact source."
+    }
+  ]
+}

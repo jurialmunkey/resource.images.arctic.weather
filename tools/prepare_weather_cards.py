@@ -18,11 +18,12 @@ ROOT = Path(__file__).resolve().parents[1]
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--sources", type=Path)
-    parser.add_argument("--style", choices=("illustrated", "watercolour"), default="illustrated")
+    parser.add_argument("--style", choices=("illustrated", "watercolour", "woodblock", "woodblock-landscape"), default="illustrated")
     parser.add_argument("--partial", action="store_true")
     args = parser.parse_args()
-    cards_dir = ROOT / "resources" / ("weather-watercolour" if args.style == "watercolour" else "weather")
+    cards_dir = ROOT / "resources" / ("weather" if args.style == "illustrated" else f"weather-{args.style}")
     manifest = json.loads((cards_dir / "manifest.json").read_text(encoding="utf-8"))
+    dimensions = tuple(manifest["dimensions"])
     expected = {str(i) for i in range(48)} | {"na"}
     entries = {card["code"]: card for card in manifest["cards"]}
     assert set(entries) == expected and len(manifest["cards"]) == 49
@@ -36,7 +37,7 @@ def main():
             with Image.open(source["path"]) as original:
                 # Preserve proportions; trim only the tiny aspect-ratio rounding
                 # difference in generated dimensions before reducing to the card.
-                card = ImageOps.fit(original.convert("RGB"), (320, 720),
+                card = ImageOps.fit(original.convert("RGB"), dimensions,
                                     method=Image.Resampling.LANCZOS)
                 card.save(destination, "JPEG", quality=90, subsampling=0,
                           optimize=True)
@@ -45,7 +46,8 @@ def main():
     if not args.partial:
         assert existing == expected, f"Missing cards: {expected - existing}"
     hashes = set()
-    columns, thumb_w, thumb_h, label_h = 7, 160, 360, 42
+    columns, label_h = 7, 42
+    thumb_w, thumb_h = (256, 144) if dimensions == (1280, 720) else (160, 360)
     preview = Image.new("RGB", (columns * thumb_w, 7 * (thumb_h + label_h)),
                         "#15202c")
     draw = ImageDraw.Draw(preview)
@@ -56,7 +58,7 @@ def main():
         x, y = (index % columns) * thumb_w, (index // columns) * (thumb_h + label_h)
         if path.exists():
             with Image.open(path) as card:
-                assert card.size == (320, 720), path
+                assert card.size == dimensions, path
                 assert card.mode == "RGB", path
                 digest = hashlib.sha256(card.tobytes()).hexdigest()
                 assert digest not in hashes, f"Duplicate artwork: {path}"
@@ -64,11 +66,11 @@ def main():
                 preview.paste(card.resize((thumb_w, thumb_h), Image.Resampling.LANCZOS), (x, y))
         draw.text((x + 5, y + thumb_h + 3), entry["code"] + "  " + entry["condition"],
                   font=font if len(entry["condition"]) < 22 else small, fill="white")
-    preview_name = "weather-watercolour-preview.jpg" if args.style == "watercolour" else "weather-cards-preview.jpg"
+    preview_name = "weather-cards-preview.jpg" if args.style == "illustrated" else f"weather-{args.style}-preview.jpg"
     preview_path = ROOT / "tools" / preview_name
     preview.save(preview_path, quality=90, subsampling=0)
     total = sum(p.stat().st_size for p in cards_dir.glob("*.jpg"))
-    print(f"Validated {len(existing)}/49 distinct RGB cards at 320 x 720; {total:,} bytes")
+    print(f"Validated {len(existing)}/49 distinct RGB cards at {dimensions[0]} x {dimensions[1]}; {total:,} bytes")
     print(preview_path)
 
 

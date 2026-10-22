@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+    <!-- Review-only includes: not imported into the live skin. -->
+    <include name="Weather_Card_Draft_FrameLayer">
+        <param name="time">180</param>
+        <param name="diffuse">diffuse/tall_w320_h720.png</param>
+        <definition>
+            <control type="multiimage">
+                <width>100%</width>
+                <height>100%</height>
+                <aspectratio scalediffuse="false">stretch</aspectratio>
+                <imagepath diffuse="$PARAM[diffuse]">$PARAM[path]</imagepath>
+                <timeperimage>$PARAM[time]</timeperimage>
+                <fadetime>0</fadetime>
+                <pauseatend>0</pauseatend>
+                <randomize>false</randomize>
+                <loop>yes</loop>
+            </control>
+        </definition>
+    </include>
+
+    <include name="Weather_Card_Draft_StaticLayer">
+        <param name="diffuse">diffuse/tall_w320_h720.png</param>
+        <definition>
+            <control type="image">
+                <width>100%</width>
+                <height>100%</height>
+                <aspectratio scalediffuse="false">stretch</aspectratio>
+                <texture background="true" diffuse="$PARAM[diffuse]">$PARAM[texture]</texture>
+            </control>
+        </definition>
+    </include>
+
+    <include name="Weather_Card_Draft_Thunderstorm">
+        <param name="path">special://home/addons/resource.images.arctic.weather/tools/drafts/woodblock-animation-3/layers</param>
+        <param name="width">320</param>
+        <param name="height">720</param>
+        <param name="diffuse">diffuse/tall_w320_h720.png</param>
+        <definition>
+            <control type="group">
+                <width>$PARAM[width]</width>
+                <height>$PARAM[height]</height>
+                <include content="Weather_Card_Draft_StaticLayer">
+                    <param name="texture">$PARAM[path]/base.jpg</param>
+                    <param name="diffuse">$PARAM[diffuse]</param>
+                </include>
+                <include content="Weather_Card_Draft_FrameLayer">
+                    <param name="path">$PARAM[path]/river/</param>
+                    <param name="time">300</param>
+                    <param name="diffuse">$PARAM[diffuse]</param>
+                </include>
+                <include content="Background_StartUp_LightningBurst">
+                    <param name="visible">true</param>
+                    <param name="texture">$PARAM[path]/lightning.png</param>
+                    <param name="cycle_time">5000</param>
+                    <param name="colordiffuse">ccffffff</param>
+                    <param name="echo_colordiffuse">8fffffff</param>
+                </include>
+                <include content="Weather_Card_Draft_FrameLayer">
+                    <param name="path">$PARAM[path]/rain/</param>
+                    <param name="diffuse">$PARAM[diffuse]</param>
+                </include>
+            </control>
+        </definition>
+    </include>
+</includes>
