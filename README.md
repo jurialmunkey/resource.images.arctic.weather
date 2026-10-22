@@ -159,8 +159,12 @@ the expanded artwork paths for every code. Results are recorded in
 `resources/weather-woodblock-landscape/` contains 49 static 1280 x 720 RGB JPEGs,
 one per code `0` through `47` plus `na`. Each static woodblock portrait was
 individually extended with built-in imagegen into a wide landscape composition,
-preserving its scene, weather, day/night and print style. These are separate
-artworks; the portrait sources and animated assets remain available.
+preserving its scene, weather and day/night. The landscape set uses the approved
+hail and sleet drafts as style references: broad printed color planes, subtle
+paper grain, layered silhouettes and selective architectural detail. Fine
+foliage, roof tiles, masonry and surface reflections are reduced while keeping
+the character of each scene. The portrait sources and animated assets remain
+available.
 
 The current-weather dialog selects this set through the shared
 `Weather_Card_Artwork` include's `landscape` parameter. Its unavailable-condition
@@ -172,6 +176,9 @@ recorded in `tools/weather-woodblock-landscape-sources.json`; runtime images are
 self-contained. `tools/weather-woodblock-landscape-preview.jpg` shows every
 landscape with its weather code. Validate and recreate the preview with
 `python tools/prepare_weather_cards.py --style woodblock-landscape`.
+Local generation tools, source records and previews are kept in the ignored
+`tools/` directory. To rebuild approved artwork from local generation records,
+pass `--sources tools/weather-woodblock-landscape-sources.json --replace`.
 
 The skin requires this add-on at version 1.0.3 or newer. Install it in Kodi's
 user add-ons directory. The image resource uses type="weather" and

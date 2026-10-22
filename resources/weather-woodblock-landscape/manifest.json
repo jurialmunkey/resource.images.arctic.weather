@@ -1,13 +1,13 @@
 {
-  "version": 1,
+  "version": 2,
   "dimensions": [
     1280,
     720
   ],
   "source": "https://kodi.wiki/view/Weather_addons#Weather_Codes",
   "generator": "built-in imagegen",
-  "styleReference": "Static weather-woodblock portraits, individually extended into landscape compositions.",
-  "prompt": "Extend each source woodblock portrait naturally to a 16:9 landscape. Preserve scene identity, main motifs, weather conditions, day/night, palette, paper grain and ink silhouettes. Expand coherent scenery left and right; no stretching, portrait crop, borders or text.",
+  "styleReference": "User-approved moderate-detail landscape drafts: hail (17.jpg) and sleet (18.jpg).",
+  "prompt": "Use image 1 ONLY as the scene/composition reference to restyle. Images 2 and 3 are the USER-APPROVED STYLE REFERENCES (hail and sleet). Create ONE 16:9 landscape weather illustration, target 1280x720, matching the exact MODERATE woodblock detail level of images 2 and 3. Broad printed color planes, subtle fine paper grain, atmospheric layered silhouettes, recognizable but selectively drawn architecture, irregular foliage clusters, restrained roof structure, calm quieter sky and ground, a limited number of broad broken reflections. Preserve the main motifs and wide composition of image 1 while reducing its fine clutter to the approved references' level. Do not over-simplify into geometric clip art or flat icon silhouettes: keep enough handcrafted architectural and vegetation character to match the approved examples. Do not add dense stippling, detailed individual leaves, rows of roof tiles, elaborate carved ornament, tiny masonry grids, excessive ripples, photographic shading or glossy digital gradients. Restrained warm ivory, pale blue-grey, slate blue, deep navy and small vermilion accents; translate vivid green and pink into the approved palette. Weather and cloud coverage must match the specified condition, not the storm weather of the style references. For non-rainy codes keep the ground appropriate and do not copy wet streets, snow, rain, hail or dark storm sky from style references. No text, labels, icons, border, panels, watermark or signature. Opaque full bleed landscape.",
   "cards": [
     {
       "code": "0",
@@ -224,8 +224,7 @@
       "condition": "partly cloudy (day)",
       "scene": "spring cherry blossom path along a Kyoto canal and tiled roofs",
       "weather": "Daytime: large separated fluffy white cumulus clouds with broad vivid blue gaps, patches of warm sunlight and soft shade, fresh pink blossom and green foliage.",
-      "file": "30.jpg",
-      "refinementPrompt": "Use case: style-transfer. Image 1 is the edit target, an existing partly cloudy DAY card. Image 2 is the APPROVED palette and simplicity reference (Sunny card). Edit image 1 ONLY to align its colors and simplification with image 2. Preserve image 1's tall narrow 4:9 portrait dimensions, scene, weather condition, cloud coverage and object placement. Use the reference's limited palette: warm ivory, muted blue-grey, slate blue, deep ink navy and a restrained vermilion accent. Replace ALL green foliage with slate-blue or navy silhouettes. Replace the large pink blossom masses with sparser restrained vermilion blossom accents, and simplify the foreground. Keep the broad open blue-grey sky with separated ivory cumulus clouds covering roughly half the sky, no rain. Flat Japanese woodblock shapes, subtle paper grain as reference, uncluttered illustration, no added text, icons, borders, watermark, glow, photo realism or new objects."
+      "file": "30.jpg"
     },
     {
       "code": "31",
@@ -267,8 +266,7 @@
       "condition": "hot",
       "scene": "Japanese summer lane with a sunlit shrine, bamboo fence and brilliant green trees",
       "weather": "Intense hot summer sunshine, high blazing sun, heat shimmer distorting distant roofs and road, hard short shadows, saturated warm golden light and deep blue nearly cloudless sky; dry ground.",
-      "file": "36.jpg",
-      "refinementPrompt": "Use case: style-transfer. Image 1 is the edit target, an existing HOT summer weather card. Image 2 is the APPROVED palette and simplicity reference (Sunny card). Edit image 1 ONLY to align its colors and simplification with image 2. Preserve image 1's tall narrow 4:9 portrait dimensions, scene, weather condition, cloud coverage and object placement. Use the reference's limited palette: warm ivory, muted blue-grey, slate blue, deep ink navy and a restrained vermilion accent. Replace ALL green foliage with slate-blue or navy silhouettes. Remove lime/yellow-green highlights entirely; turn foliage into broad blue-grey/navy silhouettes. Keep the bold vermilion sun disk, dry ivory road, hard short shadows, heat shimmer and cloudless or nearly cloudless daytime sky. Reduce building and foliage detail. Flat Japanese woodblock shapes, subtle paper grain as reference, uncluttered illustration, no added text, icons, borders, watermark, glow, photo realism or new objects."
+      "file": "36.jpg"
     },
     {
       "code": "37",
@@ -355,6 +353,5 @@
       "file": "na.jpg"
     }
   ],
-  "promptSuffix": "Simplify the scene strongly: broad shape silhouettes, only a few architectural shapes and sparse foliage, matching the approved Sunny reference. Weather cues take priority over incidental scene detail.",
   "sourceSet": "weather-woodblock"
 }
